@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <table>
+            <input type="number" id="thue" placeholder="Nhập doanh số">
+            <button onclick="check()">Thành tiền</button>
+            <h3>Số tiền thuế cá nhân là:</h3>
+            <div id="result">Số tiền</div>
+        </table>
+        <script>
+            function check(){
+                let a= document.getElementById("thue").value;
+                if( a < 5000000)
+                {
+                    result= (a*5)/100;
+                }else if(a <= 10000000)
+                {
+                    result= (a*10)/100;
+                }
+                else if ( a >= 18000000)
+                {
+                    result= (a*15)/100;
+                }
+                else if ( a >= 32000000)
+                {
+                    result= (a*20)/100;
+                }
+                    
+                document.getElementById("result").innerHTML= result +""+ "VNĐ";
+            }
+        </script>
+    </table>
+</body>
+</html>
